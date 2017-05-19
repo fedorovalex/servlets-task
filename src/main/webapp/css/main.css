@@ -1,0 +1,48 @@
+.global {
+    position: relative;
+    display: inline-block;
+    height: 512px;
+}
+
+.container-button, .main {
+    display: inline-block;
+    background-color: #ECEFF1;
+}
+
+.container-button {
+    width: 30px;
+    float: left;
+}
+
+.button-next {
+    float: right;
+}
+
+button {
+    height: 512px;
+    width: 30px;
+}
+
+span {
+    display: inline-block;
+    margin-left: -60px;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+}
+
+.button-next span {
+    transform: rotate(90deg);
+    margin-left: -47px;
+}
+
+.title-photos {
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+}
+
+.photos {
+    height: 461px;
+    overflow-y: scroll;
+    width: 470px;
+}
