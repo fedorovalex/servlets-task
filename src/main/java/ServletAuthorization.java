@@ -18,23 +18,10 @@ public class ServletAuthorization extends HttpServlet{
         String password = req.getParameter("password");
         
         if (loginCorrect.equals(login) && passwordCorrect.equals(password)) {
-//            nextPage = "WEB-INF/vip.html";
             req.getSession().setAttribute("access", true);
         } else {
-//            nextPage = "novip.html";
             req.getSession().setAttribute("access", false);
         }
         resp.sendRedirect("/vip");
     }
-
-//    @Override
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String nextPage;
-//        if ((boolean)req.getSession().getAttribute("access")) {
-//            nextPage = "WEB-INF/vip.html";
-//        } else {
-//            nextPage = "novip.html";
-//        }
-//        req.getRequestDispatcher(nextPage).forward(req, resp);
-//    }
 }
