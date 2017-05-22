@@ -4,27 +4,27 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class UserStorage {
-    
+
     private static UserStorage userStorage = new UserStorage();
     private Map<String, String> users;
     private static final int MIN_NUMBER_OF_SYMBOL = 3;
-    
+
     private UserStorage() {
         users = new ConcurrentHashMap<String, String>();
     }
-    
+
     public static UserStorage get() {
         return userStorage;
     }
-    
+
     public boolean isContain(String login) {
         return users.containsKey(login);
     }
-    
+
     public boolean validation(String login, String password) {
         return users.containsKey(login) && users.get(login).equals(password);
     }
-    
+
     public boolean add(String login, String password) {
         boolean success = false;
         if (isValid(login) && isValid(password)) {
@@ -33,7 +33,7 @@ public class UserStorage {
         }
         return success;
     }
-    
+
     private boolean isValid(String field) {
         return field != null && field.length() >= MIN_NUMBER_OF_SYMBOL;
     }
