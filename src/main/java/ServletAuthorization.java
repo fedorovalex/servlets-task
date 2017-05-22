@@ -22,6 +22,6 @@ public class ServletAuthorization extends HttpServlet{
         } else {
             req.getSession().setAttribute("access", false);
         }
-        resp.sendRedirect("/vip");
+        resp.sendRedirect("vip.html");
     }
 }
