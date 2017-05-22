@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class UserStorage {
     
-    private static UserStorage userStorage = null;
+    private static UserStorage userStorage = new UserStorage();
     private Map<String, String> users;
     private static final int MIN_NUMBER_OF_SYMBOL = 3;
     
@@ -14,13 +14,6 @@ public class UserStorage {
     }
     
     public static UserStorage get() {
-        if (userStorage == null) {
-            synchronized (UserStorage.class) {
-                if (userStorage == null) {
-                    userStorage = new UserStorage();
-                }
-            }
-        }
         return userStorage;
     }
     
