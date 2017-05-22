@@ -1,3 +1,4 @@
+package servlets;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -27,7 +28,7 @@ public class LoginFilter implements Filter {
             chain.doFilter(req, resp);
         } else {
             HttpServletResponse httpResponse = (HttpServletResponse) resp;
-            httpResponse.sendRedirect("novip.html");
+            httpResponse.sendRedirect("registration.html");
         }
     }
 
